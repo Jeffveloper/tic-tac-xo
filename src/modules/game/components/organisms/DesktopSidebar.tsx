@@ -5,7 +5,7 @@ import Scoreboard from '../molecules/Scoreboard';
 
 const DesktopSidebar = () => {
 	return (
-		<div className="w-[25rem] h-screen p-6 bg-black flex flex-col justify-between">
+		<div className="w-[25rem] h-screen p-6 bg-black flex flex-col gap-10 justify-between overflow-y-auto">
 			<Logo />
 			<CurrentTurnTable />
 			<Scoreboard />

@@ -1,6 +1,7 @@
 @import 'base/fonts.css';
 @import 'base/index.css';
 @import 'components/buttons.css';
+@import 'components/scroll.css';
 @import 'components/typography.css';
 
 @tailwind base;

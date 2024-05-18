@@ -1,0 +1,13 @@
+@layer base {
+	*::-webkit-scrollbar {
+		@apply bg-gray w-2.5 h-2.5;
+	}
+
+	*::-webkit-scrollbar-thumb {
+		@apply bg-black/60  hover:bg-black/30 active:bg-black/30;
+	}
+
+	*::-webkit-scrollbar-thumb-track {
+		@apply bg-black;
+	}
+}
