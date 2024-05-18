@@ -1,6 +1,6 @@
-import DesktopSidebar from '@/organisms/DesktopSidebar';
-import MobileHeader from '@/organisms/MobileHeader';
 import { useMedia } from 'react-use';
+import DesktopSidebar from './components/organisms/DesktopSidebar';
+import MobileHeader from './components/organisms/MobileHeader';
 
 const GameView = () => {
 	const isFromLg = useMedia('(min-width: 1024px)', true);

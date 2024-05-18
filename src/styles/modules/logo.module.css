@@ -1,33 +1,17 @@
-.cross {
-  top: 9px;
-  right: 19px;
+.root:hover .circle {
+	transform: translateY(calc((100% - 1.75rem)));
 }
 
 .root:hover .cross {
-  top: 27px;
+	transform: translateY(calc((100% - 1.75rem) * -1));
 }
 
-.circle {
-  bottom: 9px;
-  right: 8px;
-}
+@media (min-width: 64rem) {
+	.root:hover .circle {
+		transform: translateY(calc((100% - 2rem)));
+	}
 
-.root:hover .circle {
-  bottom: 27px;
-}
-
-@media (min-width: 1024px) {
-  .cross {
-    top: 8px;
-    right: 22px;
-  }
-
-  .root:hover .cross {
-    top: 32px;
-  }
-
-  .circle {
-    bottom: 8px;
-    right: 7px;
-  }
+	.root:hover .cross {
+		transform: translateY(calc((100% - 2rem) * -1));
+	}
 }

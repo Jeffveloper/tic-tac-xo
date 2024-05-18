@@ -18,6 +18,7 @@
 			"@/molecules/*": ["core/components/molecules/*"],
 			"@/organisms/*": ["core/components/organisms/*"],
 			"@/constants/*": ["core/components/constants/*"],
+			"@/interfaces/*": ["core/components/interfaces/*"],
 			"@/helpers/*": ["core/components/helpers/*"],
 			"@/modules/*": ["modules/*"]
 		},

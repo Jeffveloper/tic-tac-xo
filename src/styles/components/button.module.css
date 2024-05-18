@@ -1,0 +1,8 @@
+.root::before {
+	@apply absolute left-0 top-0 w-0 h-full bg-white transition-all;
+	content: '';
+}
+
+.root:hover::before {
+	@apply w-full;
+}
