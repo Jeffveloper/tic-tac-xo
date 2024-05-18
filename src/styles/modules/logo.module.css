@@ -1,0 +1,33 @@
+.cross {
+  top: 9px;
+  right: 19px;
+}
+
+.root:hover .cross {
+  top: 27px;
+}
+
+.circle {
+  bottom: 9px;
+  right: 8px;
+}
+
+.root:hover .circle {
+  bottom: 27px;
+}
+
+@media (min-width: 1024px) {
+  .cross {
+    top: 8px;
+    right: 22px;
+  }
+
+  .root:hover .cross {
+    top: 32px;
+  }
+
+  .circle {
+    bottom: 8px;
+    right: 7px;
+  }
+}
