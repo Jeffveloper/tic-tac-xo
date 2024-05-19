@@ -1,6 +1,7 @@
 import { useLoadRenderContext } from '@/modules/game/providers/load-render';
 import { BoardItemPosition } from '@/modules/interfaces/board';
 import { useFrame } from '@react-three/fiber';
+import { APP_COLORS } from 'core/constants/colors';
 import { useRef } from 'react';
 import { Mesh } from 'three';
 const ObjectCircle = ({ position }: ObjectCircleProps) => {
@@ -34,7 +35,7 @@ const ObjectCircle = ({ position }: ObjectCircleProps) => {
 			rotation={[Math.PI / 2, Math.PI / 4, 0]}
 			scale={0}
 		>
-			<meshStandardMaterial color={0x000000} />
+			<meshStandardMaterial color={APP_COLORS.WHITE} />
 		</mesh>
 	);
 };

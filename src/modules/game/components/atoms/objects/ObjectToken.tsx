@@ -1,5 +1,6 @@
 import { BoardItemPosition } from '@/modules/interfaces/board';
 import { useFrame } from '@react-three/fiber';
+import { APP_COLORS } from 'core/constants/colors';
 import { useRef, useState } from 'react';
 import { Mesh } from 'three';
 
@@ -38,7 +39,7 @@ const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
 			onPointerOut={() => setIsHover(false)}
 		>
 			<boxGeometry args={[1, 1, 0.6]} />
-			<meshStandardMaterial color={0xf9f9f9} />
+			<meshStandardMaterial color={APP_COLORS.GRAY} />
 		</mesh>
 	);
 };

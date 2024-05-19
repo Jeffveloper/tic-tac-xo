@@ -1,6 +1,6 @@
 import GameView from '@/modules/game/GameView';
-import GameHistoryProvider from '@/modules/providers/game-history';
-import GameStatesProvider from '@/modules/providers/game-states';
+import GameHistoryProvider from '@/modules/game/providers/game-history';
+import GameStatesProvider from '@/modules/game/providers/game-states';
 
 const HomePage = () => {
 	return (

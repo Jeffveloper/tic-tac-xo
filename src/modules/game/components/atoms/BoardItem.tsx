@@ -1,5 +1,3 @@
-import { useGameHistoryContext } from '@/modules/providers/game-history';
-import { useGameStatesContext } from '@/modules/providers/game-states';
 import { areEqualStrings, isEmptyString } from 'core/helpers/string';
 import { useEffect, useState } from 'react';
 import UseHandleMove from '../../hooks/UseHandleMove';
@@ -7,10 +5,12 @@ import { GAME_VALUES } from '../../constants/board';
 import ObjectCross from './objects/ObjectCross';
 import ObjectCircle from './objects/ObjectCircle';
 import ObjectToken from './objects/ObjectToken';
-import { BoardItemData } from '@/modules/interfaces/board';
+import { useGameStatesContext } from '../../providers/game-states';
+import { useGameHistoryContext } from '../../providers/game-history';
+import { BoardItemData } from '../../interfaces/board';
 
 const BoardItem = ({ item, order }: BoardItemProps) => {
-	const { isFinished, isNextCross, setIsNextCross } = useGameStatesContext();
+	const { isFinished, currentTurn, setCurrentTurn } = useGameStatesContext();
 	const { squares, setSquares } = useGameHistoryContext();
 
 	const { position, value } = item;
@@ -25,8 +25,8 @@ const BoardItem = ({ item, order }: BoardItemProps) => {
 		isFinished,
 		squares,
 		setSquares,
-		isNextCross,
-		setIsNextCross,
+		currentTurn,
+		setCurrentTurn,
 	});
 
 	const isCurrentCross = areEqualStrings(GAME_VALUES.BASE, value);
@@ -54,7 +54,6 @@ const BoardItem = ({ item, order }: BoardItemProps) => {
 
 type BoardItemProps = {
 	item: BoardItemData;
-	isNextCross: boolean;
 	order: number;
 };
 
