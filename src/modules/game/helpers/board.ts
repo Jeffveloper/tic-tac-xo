@@ -1,5 +1,5 @@
-import { BoardItemData } from '@/modules/interfaces/board';
 import { BOARD_ITEMS_POSITIONS } from '../constants/board';
+import { BoardItemData } from '../interfaces/board';
 
 export const getBoardItems = (squares: string[]) => {
 	const boardItems: BoardItemData[] = BOARD_ITEMS_POSITIONS.map(

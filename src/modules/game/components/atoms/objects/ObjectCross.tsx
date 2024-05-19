@@ -1,5 +1,5 @@
+import { BoardItemPosition } from '@/modules/game/interfaces/board';
 import { useLoadRenderContext } from '@/modules/game/providers/load-render';
-import { BoardItemPosition } from '@/modules/interfaces/board';
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
 import { useRef } from 'react';
