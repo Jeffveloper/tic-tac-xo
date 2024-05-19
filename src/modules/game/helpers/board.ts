@@ -10,6 +10,5 @@ export const getBoardItems = (squares: string[]) => {
 			};
 		}
 	);
-
 	return boardItems;
 };

@@ -18,15 +18,6 @@ const BackgroundCanvas = () => {
 				<BackgroundLights />
 				<TicObjectGroup />
 				<TacObjectGroup />
-				{/* {IS_DEBUGGER_MODE && (
-          <>
-            <GizmoHelper alignment="bottom-right" margin={[100, 100]}>
-              <GizmoViewport labelColor="white" axisHeadScale={1} />
-            </GizmoHelper>
-            <Grid args={[100, 100]} />
-            <OrbitControls enableDamping enablePan enableRotate enableZoom />
-          </>
-        )} */}
 			</Canvas>
 		</div>
 	);
