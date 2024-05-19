@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import ButtonStyles from '@/styles/components/button.module.css';
+import ButtonStyles from '@/styles/modules/button.module.css';
 import { AnchorHTMLAttributes, ReactNode } from 'react';
 
 const ButtonLink = ({

@@ -1,4 +1,4 @@
-import ButtonStyles from '@/styles/components/button.module.css';
+import ButtonStyles from '@/styles/modules/button.module.css';
 import classNames from 'classnames';
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 

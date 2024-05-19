@@ -72,7 +72,7 @@ const CurrentTurnIndicator = () => {
 				rotation={[Math.PI / 2, Math.PI / 4, 0]}
 				scale={0.5}
 			>
-				<meshStandardMaterial color={APP_COLORS.WHITE} />
+				<meshBasicMaterial color={APP_COLORS.WHITE} />
 			</mesh>
 		</>
 	);

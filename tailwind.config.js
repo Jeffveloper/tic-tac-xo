@@ -12,7 +12,6 @@ module.exports = {
 				width: 'width',
 			},
 		},
-
 		fontFamily: {
 			sans: ['Space Mono', 'monospace'],
 		},
