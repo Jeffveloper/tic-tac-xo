@@ -1,7 +1,7 @@
 import { useMedia } from 'react-use';
 import DesktopSidebar from './components/organisms/DesktopSidebar';
 import MobileHeader from './components/organisms/MobileHeader';
-import BackgroundCanvas from '../background/BackgroundAnimation';
+import BackgroundScene from '../background/BackgroundScene';
 import BoardScene from './components/organisms/BoardScene';
 
 const GameView = () => {
@@ -9,7 +9,7 @@ const GameView = () => {
 
 	return (
 		<>
-			<BackgroundCanvas />
+			<BackgroundScene />
 			<main className="relative grid grid-rows-auto-fr lg:grid-cols-auto-fr lg:grid-rows-1">
 				{isFromLg && <DesktopSidebar />}
 				{!isFromLg && <MobileHeader />}

@@ -17,7 +17,7 @@ const useCrossAnimation = ({
 	meshRef,
 	rotationSpeeds,
 }: useCrossAnimationProps) => {
-	const { orbitRadius, orbitSpeed, radius, tube } = getAnimationStats();
+	const { orbitRadius, orbitSpeed, scale } = getAnimationStats();
 
 	const positionY = getRandomNumber(-5, 5) + 2;
 	let angle = getRandomNumber(0, 360);
@@ -39,8 +39,7 @@ const useCrossAnimation = ({
 	});
 
 	return {
-		radius,
-		tube,
+		scale,
 	};
 };
 

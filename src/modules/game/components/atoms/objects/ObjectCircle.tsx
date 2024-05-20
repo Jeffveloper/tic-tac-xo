@@ -36,7 +36,7 @@ const ObjectCircle = ({ position }: ObjectCircleProps) => {
 			rotation={[Math.PI / 2, Math.PI / 4, 0]}
 			scale={0}
 		>
-			<meshStandardMaterial color={APP_COLORS.WHITE} />
+			<meshLambertMaterial color={APP_COLORS.WHITE} />
 		</mesh>
 	);
 };

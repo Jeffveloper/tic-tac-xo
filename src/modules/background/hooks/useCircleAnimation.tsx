@@ -13,11 +13,11 @@ import {
 	Object3DEventMap,
 } from 'three';
 
-const useTorusAnimation = ({
+const useCircleAnimation = ({
 	meshRef,
 	rotationSpeeds,
-}: useTorusAnimationProps) => {
-	const { orbitRadius, orbitSpeed, radius, tube } = getAnimationStats();
+}: useCircleAnimationProps) => {
+	const { orbitRadius, orbitSpeed, scale } = getAnimationStats();
 
 	const positionX = getRandomNumber(-3, 3);
 	let angle = getRandomNumber(0, 360);
@@ -39,12 +39,11 @@ const useTorusAnimation = ({
 	});
 
 	return {
-		radius,
-		tube,
+		scale,
 	};
 };
 
-type useTorusAnimationProps = {
+type useCircleAnimationProps = {
 	meshRef: RefObject<
 		Mesh<
 			BufferGeometry<NormalBufferAttributes>,
@@ -59,4 +58,4 @@ type useTorusAnimationProps = {
 	};
 };
 
-export default useTorusAnimation;
+export default useCircleAnimation;

@@ -7,3 +7,4 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 useGLTF.preload('/models/icons.glb');
+useGLTF.preload('/models/board.glb');

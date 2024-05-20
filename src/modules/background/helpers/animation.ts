@@ -54,14 +54,12 @@ export const getPositionsToRotateAround = (
 };
 
 export const getAnimationStats = () => {
-	const radius = getRandomNumber(0.1, 1);
-	const tube = radius * 0.4;
+	const scale = Number(getRandomNumber(0.1, 0.5).toFixed(1));
 	const orbitRadius = getRandomNumber(16, 22);
 	const orbitSpeed = getRandomNumber(0.001, 0.002);
 
 	return {
-		radius,
-		tube,
+		scale,
 		orbitRadius,
 		orbitSpeed,
 	};

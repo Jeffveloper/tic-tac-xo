@@ -1,12 +1,20 @@
 import { BoardItemPosition } from '@/modules/game/interfaces/board';
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useLoader } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
-import { useRef, useState } from 'react';
-import { Mesh } from 'three';
+import { getRandomNumber } from 'core/helpers/numbers';
+import { useMemo, useRef, useState } from 'react';
+import { Mesh, TextureLoader } from 'three';
 
 const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
+	const RANDOM_TEXTURE = useMemo(
+		() => `/images/cube_texture_${getRandomNumber(1, 4).toFixed(0)}.png`,
+		[]
+	);
+
 	const meshRef = useRef<Mesh>(null!);
 	const [isHover, setIsHover] = useState(false);
+
+	const colorMap = useLoader(TextureLoader, RANDOM_TEXTURE);
 
 	useFrame((_, delta) => {
 		const handleHover = () => {
@@ -39,7 +47,7 @@ const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
 			onPointerOut={() => setIsHover(false)}
 		>
 			<boxGeometry args={[1, 1, 0.6]} />
-			<meshStandardMaterial color={APP_COLORS.GRAY} />
+			<meshLambertMaterial map={colorMap} color={APP_COLORS.GRAY} />
 		</mesh>
 	);
 };

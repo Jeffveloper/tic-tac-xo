@@ -8,7 +8,7 @@ const LoadRenderContext = createContext({} as LoadRenderContextProps);
 const LoadRenderProvider = ({ children }: LoadRenderProviderProps) => {
 	const {
 		nodes: { circle_object, cross_object },
-	} = useGLTF('/models/icons.glb') as GLTFResult;
+	} = useGLTF('/models/icons.glb') as GLTFIconsResult;
 
 	return (
 		<LoadRenderContext.Provider
@@ -33,7 +33,7 @@ type LoadRenderContextProps = {
 
 export const useLoadRenderContext = () => useContext(LoadRenderContext);
 
-type GLTFResult = GLTF & {
+type GLTFIconsResult = GLTF & {
 	nodes: {
 		circle_object: Mesh;
 		cross_object: Mesh;
