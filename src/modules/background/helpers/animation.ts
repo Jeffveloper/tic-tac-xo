@@ -54,7 +54,7 @@ export const getPositionsToRotateAround = (
 };
 
 export const getAnimationStats = () => {
-	const scale = Number(getRandomNumber(0.1, 0.5).toFixed(1));
+	const scale = Number(getRandomNumber(0.2, 0.7).toFixed(1));
 	const orbitRadius = getRandomNumber(16, 22);
 	const orbitSpeed = getRandomNumber(0.001, 0.002);
 

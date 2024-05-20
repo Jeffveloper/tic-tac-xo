@@ -9,11 +9,11 @@ const GameView = () => {
 
 	return (
 		<>
-			<BackgroundScene />
+			{/* <BackgroundScene /> */}
 			<main className="relative grid grid-rows-auto-fr lg:grid-cols-auto-fr lg:grid-rows-1">
 				{isFromLg && <DesktopSidebar />}
 				{!isFromLg && <MobileHeader />}
-				<section className="relative flex items-center justify-center h-full w-full">
+				<section className="relative flex items-center justify-center h-[calc(100vh-4.75rem)] lg:h-full w-full">
 					<BoardScene />
 				</section>
 			</main>

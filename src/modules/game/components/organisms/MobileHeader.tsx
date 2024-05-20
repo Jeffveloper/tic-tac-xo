@@ -3,7 +3,7 @@ import MobileSidebar from './MobileSidebar';
 
 const MobileHeader = () => {
 	return (
-		<aside className="bg-black w-full h-fit p-4 flex justify-between">
+		<aside className="bg-black w-full h-fit p-4 flex justify-between items-center">
 			<Logo />
 			<MobileSidebar />
 		</aside>

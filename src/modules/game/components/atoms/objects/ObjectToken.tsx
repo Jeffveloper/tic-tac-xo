@@ -7,7 +7,7 @@ import { Mesh, TextureLoader } from 'three';
 
 const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
 	const RANDOM_TEXTURE = useMemo(
-		() => `/images/cube_texture_${getRandomNumber(1, 4).toFixed(0)}.png`,
+		() => `/images/cube_texture_${getRandomNumber(1, 4).toFixed(0)}.webp`,
 		[]
 	);
 
@@ -47,7 +47,7 @@ const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
 			onPointerOut={() => setIsHover(false)}
 		>
 			<boxGeometry args={[1, 1, 0.6]} />
-			<meshLambertMaterial map={colorMap} color={APP_COLORS.GRAY} />
+			<meshLambertMaterial map={colorMap} color={APP_COLORS.WHITE} />
 		</mesh>
 	);
 };

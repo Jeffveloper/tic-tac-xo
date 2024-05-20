@@ -34,7 +34,7 @@ const BackgroundScene = () => {
 							bokehScale={5}
 							height={480}
 						/>
-						<Noise opacity={0.01} />
+						{/* <Noise opacity={0.01} /> */}
 						<Pixelation granularity={10} />
 					</EffectComposer>
 				</LoadRenderProvider>

@@ -2,8 +2,16 @@
 	body {
 		@apply text-white;
 
-		background-image: url('/images/background-texture.webp');
-		background-size: 40rem;
-		background-position: center;
+		background-image: url('/images/background-texture-mobile.webp');
+		background-size: 34rem;
+		background-position: left;
+	}
+
+	@screen lg {
+		body {
+			background-image: url('/images/background-texture.webp');
+			background-size: 40%;
+			background-position: left;
+		}
 	}
 }
