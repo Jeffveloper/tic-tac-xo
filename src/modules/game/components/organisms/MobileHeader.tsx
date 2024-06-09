@@ -3,10 +3,10 @@ import MobileSidebar from './MobileSidebar';
 
 const MobileHeader = () => {
 	return (
-		<aside className="bg-black w-full h-fit p-4 flex justify-between items-center">
+		<div className="bg-black w-full p-4 flex justify-between items-center border-t border-white h-mobile-header">
 			<Logo />
 			<MobileSidebar />
-		</aside>
+		</div>
 	);
 };
 

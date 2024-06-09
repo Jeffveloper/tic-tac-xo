@@ -1,5 +1,19 @@
+import { GAME_VALUES } from './board';
+
 export enum GAME_STATUS {
 	DRAW = 'draw',
 	WIN = 'win',
 	PLAYING = 'playing',
 }
+
+export const DEFAULT_GAME_STATE = [
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+	GAME_VALUES.VOID,
+];

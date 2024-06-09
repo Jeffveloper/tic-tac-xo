@@ -1,20 +1,17 @@
 import { BoardItemPosition } from '@/modules/game/interfaces/board';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
-import { getRandomNumber } from 'core/helpers/numbers';
-import { useMemo, useRef, useState } from 'react';
-import { Mesh, TextureLoader } from 'three';
+import { useRef, useState } from 'react';
+import { Mesh } from 'three';
 
-const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
-	const RANDOM_TEXTURE = useMemo(
-		() => `/images/cube_texture_${getRandomNumber(1, 4).toFixed(0)}.webp`,
-		[]
-	);
-
+const ObjectToken = ({
+	position,
+	isAvailable,
+	handleClick,
+}: ObjectTokenProps) => {
 	const meshRef = useRef<Mesh>(null!);
-	const [isHover, setIsHover] = useState(false);
 
-	const colorMap = useLoader(TextureLoader, RANDOM_TEXTURE);
+	const [isHover, setIsHover] = useState(false);
 
 	useFrame((_, delta) => {
 		const handleHover = () => {
@@ -38,16 +35,31 @@ const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
 		if (!isHover) handleUnhover();
 	});
 
+	const getMaterialColor = () => {
+		if (isAvailable && isHover) return APP_COLORS.WHITE;
+
+		return APP_COLORS.SMOKE_BLACK;
+	};
+
 	return (
 		<mesh
 			ref={meshRef}
 			position={[position.x, position.y, position.z]}
-			onClick={onClick}
-			onPointerOver={() => setIsHover(true)}
-			onPointerOut={() => setIsHover(false)}
+			onClick={(e) => {
+				e.stopPropagation();
+				handleClick();
+			}}
+			onPointerOver={(e) => {
+				e.stopPropagation();
+				setIsHover(true);
+			}}
+			onPointerOut={(e) => {
+				e.stopPropagation();
+				setIsHover(false);
+			}}
 		>
 			<boxGeometry args={[1, 1, 0.6]} />
-			<meshLambertMaterial map={colorMap} color={APP_COLORS.WHITE} />
+			<meshLambertMaterial color={getMaterialColor()} />
 		</mesh>
 	);
 };
@@ -55,7 +67,7 @@ const ObjectToken = ({ position, isAvailable, onClick }: ObjectTokenProps) => {
 type ObjectTokenProps = {
 	position: BoardItemPosition;
 	isAvailable: boolean;
-	onClick: () => void;
+	handleClick: () => void;
 };
 
 export default ObjectToken;

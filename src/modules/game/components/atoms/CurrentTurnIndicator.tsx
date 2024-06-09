@@ -12,13 +12,13 @@ const CurrentTurnIndicator = () => {
 	const { cross_object, circle_object } = useLoadRenderContext();
 
 	useFrame((_, delta) => {
-		crossMeshhRef.current.rotation.x -= delta;
-		crossMeshhRef.current.rotation.y += delta;
-		crossMeshhRef.current.rotation.z -= delta;
+		crossMeshhRef.current.rotation.x -= delta / 4;
+		crossMeshhRef.current.rotation.y += delta / 4;
+		crossMeshhRef.current.rotation.z -= delta / 4;
 
-		circleMeshhRef.current.rotation.x += delta;
-		circleMeshhRef.current.rotation.y -= delta;
-		circleMeshhRef.current.rotation.z += delta;
+		circleMeshhRef.current.rotation.x += delta / 4;
+		circleMeshhRef.current.rotation.y -= delta / 4;
+		circleMeshhRef.current.rotation.z += delta / 4;
 
 		const showCross = () => {
 			if (crossMeshhRef.current.position.x <= 0) return;
@@ -63,7 +63,7 @@ const CurrentTurnIndicator = () => {
 				rotation={[Math.PI / 2, Math.PI / 4, 0]}
 				scale={0.5}
 			>
-				<meshStandardMaterial color={APP_COLORS.BLACK} />
+				<meshBasicMaterial color={APP_COLORS.WHITE} />
 			</mesh>
 			<mesh
 				ref={circleMeshhRef}

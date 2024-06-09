@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { GAME_STATUS } from '../constants/game';
+import { DEFAULT_GAME_STATE, GAME_STATUS } from '../constants/game';
 import { calculateWinner } from 'core/helpers/game';
 import { areEqualStrings } from 'core/helpers/string';
 import { useGameStatesContext } from '../providers/game-states';
@@ -10,19 +10,19 @@ const UseCalculateWinner = ({
 	setIsFinished,
 	squares,
 }: UseCalculateWinnerProps) => {
-	const { isFinished, setCurrentTurn, isCurrentCross } = useGameStatesContext();
+	const { setCurrentTurn, isCurrentCross } = useGameStatesContext();
 	const {
 		setSquares,
 		setRoundsCircle,
 		setRoundsCross,
 		roundsCircle,
 		roundsCross,
+		setRoundsDraw,
+		roundsDraw,
 	} = useGameHistoryContext();
 
 	useEffect(() => {
 		const status = calculateWinner(squares);
-
-		console.log(status);
 
 		if (areEqualStrings(status, GAME_STATUS.PLAYING)) return;
 
@@ -33,11 +33,13 @@ const UseCalculateWinner = ({
 				isCurrentCross
 					? setRoundsCircle(roundsCircle + 1)
 					: setRoundsCross(roundsCross + 1);
+			} else {
+				setRoundsDraw(roundsDraw + 1);
 			}
 
-			setSquares(Array(9).fill(''));
+			setSquares(DEFAULT_GAME_STATE);
+			setCurrentTurn(GAME_VALUES.CROSS);
 			setIsFinished(false);
-			setCurrentTurn(GAME_VALUES.BASE);
 		}, 300);
 	}, [
 		squares,
@@ -49,6 +51,8 @@ const UseCalculateWinner = ({
 		roundsCross,
 		setSquares,
 		setCurrentTurn,
+		setRoundsDraw,
+		roundsDraw,
 	]);
 };
 

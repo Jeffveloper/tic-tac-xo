@@ -29,7 +29,7 @@ const BoardItem = ({ item, order }: BoardItemProps) => {
 		setCurrentTurn,
 	});
 
-	const isCurrentCross = areEqualStrings(GAME_VALUES.BASE, value);
+	const isCross = areEqualStrings(GAME_VALUES.CROSS, value);
 
 	const handleSelection = () => {
 		if (!isAvailable) return;
@@ -40,13 +40,13 @@ const BoardItem = ({ item, order }: BoardItemProps) => {
 
 	return (
 		<>
-			{!isVoidValue && isCurrentCross && <ObjectCross position={position} />}
-			{!isVoidValue && !isCurrentCross && <ObjectCircle position={position} />}
+			{!isVoidValue && isCross && <ObjectCross position={position} />}
+			{!isVoidValue && !isCross && <ObjectCircle position={position} />}
 
 			<ObjectToken
 				position={position}
 				isAvailable={isAvailable}
-				onClick={handleSelection}
+				handleClick={handleSelection}
 			/>
 		</>
 	);

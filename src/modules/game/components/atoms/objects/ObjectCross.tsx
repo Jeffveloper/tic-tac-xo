@@ -1,4 +1,6 @@
+import { GAME_VALUES } from '@/modules/game/constants/board';
 import { BoardItemPosition } from '@/modules/game/interfaces/board';
+import { useGameStatesContext } from '@/modules/game/providers/game-states';
 import { useLoadRenderContext } from '@/modules/game/providers/load-render';
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
@@ -8,10 +10,11 @@ import { Mesh } from 'three';
 const ObjectCross = ({ position }: ObjectCrossProps) => {
 	const { cross_object } = useLoadRenderContext();
 	const meshRef = useRef<Mesh>(null!);
+	const { currentTurn } = useGameStatesContext();
 
 	useFrame((_, delta) => {
 		const moveZ = () => {
-			if (meshRef.current.position.z >= 0.55) return;
+			if (meshRef.current.position.z >= 0.5) return;
 
 			meshRef.current.position.z += delta;
 		};

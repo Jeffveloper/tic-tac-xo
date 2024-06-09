@@ -1,22 +1,34 @@
 import ButtonBase from '@/atoms/buttons/ButtonBase';
 
-import { useGameStatesContext } from '../../providers/game-states';
-import { useGameHistoryContext } from '../../providers/game-history';
-import { GAME_VALUES } from '../../constants/board';
 import { RestartIcon } from '@/atoms/icons/R_icon';
-import classNames from 'classnames';
+import { GAME_VALUES } from '../../constants/board';
+import { useGameHistoryContext } from '../../providers/game-history';
+import { useGameStatesContext } from '../../providers/game-states';
+import { DEFAULT_GAME_STATE } from '../../constants/game';
 
 const ResetButton = () => {
 	const { setIsFinished, setCurrentTurn } = useGameStatesContext();
-	const { setSquares, setRoundsCircle, setRoundsCross } =
-		useGameHistoryContext();
+	const {
+		squares,
+		setSquares,
+		setRoundsCircle,
+		setRoundsCross,
+		setRoundsDraw,
+	} = useGameHistoryContext();
 
 	const handleReset = () => {
+		if (squares === DEFAULT_GAME_STATE) return;
+
+		console.log({ squares, DEFAULT_GAME_STATE });
+
+		console.log('Reset');
+
 		setRoundsCircle(0);
 		setRoundsCross(0);
-		setSquares(Array(9).fill(''));
+		setRoundsDraw(0);
+		setSquares(DEFAULT_GAME_STATE);
 		setIsFinished(false);
-		setCurrentTurn(GAME_VALUES.BASE);
+		setCurrentTurn(GAME_VALUES.CROSS);
 	};
 
 	return (
@@ -26,9 +38,9 @@ const ResetButton = () => {
 			text="Reset"
 		>
 			<RestartIcon
-				className="fill-white rotate-180 group-hover:fill-black transition-colors"
-				width="16"
-				height="16"
+				className="fill-white rotate-180 group-hover:fill-black"
+				width="20"
+				height="20"
 			/>
 		</ButtonBase>
 	);

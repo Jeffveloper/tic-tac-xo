@@ -7,13 +7,15 @@ import {
 	useState,
 } from 'react';
 import { GAME_VALUES } from '../constants/board';
+import { DEFAULT_GAME_STATE } from '../constants/game';
 
 const GameHistoryContext = createContext({} as GameHistoryContextProps);
 
 const GameHistoryProvider = ({ children }: GameHistoryProviderProps) => {
-	const [squares, setSquares] = useState<GAME_VALUES[]>(Array(9).fill(''));
+	const [squares, setSquares] = useState<GAME_VALUES[]>(DEFAULT_GAME_STATE);
 	const [roundsCross, setRoundsCross] = useState(0);
 	const [roundsCircle, setRoundsCircle] = useState(0);
+	const [roundsDraw, setRoundsDraw] = useState(0);
 
 	return (
 		<GameHistoryContext.Provider
@@ -24,6 +26,8 @@ const GameHistoryProvider = ({ children }: GameHistoryProviderProps) => {
 				setRoundsCross,
 				roundsCircle,
 				setRoundsCircle,
+				roundsDraw,
+				setRoundsDraw,
 			}}
 		>
 			{children}
@@ -42,6 +46,8 @@ type GameHistoryContextProps = {
 	setRoundsCross: Dispatch<SetStateAction<number>>;
 	roundsCircle: number;
 	setRoundsCircle: Dispatch<SetStateAction<number>>;
+	roundsDraw: number;
+	setRoundsDraw: Dispatch<SetStateAction<number>>;
 };
 
 export const useGameHistoryContext = () => useContext(GameHistoryContext);

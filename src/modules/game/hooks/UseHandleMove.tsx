@@ -15,9 +15,7 @@ const UseHandleMove = ({
 		nextSquares[index] = currentTurn;
 		setSquares(nextSquares);
 		setCurrentTurn(
-			currentTurn === GAME_VALUES.BASE
-				? GAME_VALUES.ALTERNATIVE
-				: GAME_VALUES.BASE
+			currentTurn === GAME_VALUES.CROSS ? GAME_VALUES.CIRCLE : GAME_VALUES.CROSS
 		);
 	};
 

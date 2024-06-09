@@ -13,8 +13,8 @@ const GameStatesContext = createContext({} as GameStatesContextProps);
 
 const GameStatesProvider = ({ children }: GameStatesProviderProps) => {
 	const [isFinished, setIsFinished] = useState(false);
-	const [currentTurn, setCurrentTurn] = useState(GAME_VALUES.BASE);
-	const isCurrentCross = areEqualStrings(GAME_VALUES.BASE, currentTurn);
+	const [currentTurn, setCurrentTurn] = useState(GAME_VALUES.CROSS);
+	const isCurrentCross = areEqualStrings(GAME_VALUES.CROSS, currentTurn);
 
 	return (
 		<GameStatesContext.Provider

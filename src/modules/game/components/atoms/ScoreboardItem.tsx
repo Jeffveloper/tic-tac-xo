@@ -1,25 +1,28 @@
-import { GAME_VALUES } from '../../constants/board';
+import { GAME_WINNER } from 'core/constants/players';
+import { areEqualStrings } from 'core/helpers/string';
 import { useGameHistoryContext } from '../../providers/game-history';
 
-const ScoreboardItem = ({ isAlternative }: ScoreboardItemProps) => {
-	const { roundsCircle, roundsCross } = useGameHistoryContext();
+const ScoreboardItem = ({ winner }: ScoreboardItemProps) => {
+	const { roundsCircle, roundsCross, roundsDraw } = useGameHistoryContext();
 
 	return (
-		<div className="flex flex-col w-full">
-			<div className="bg-white text-black text-center py-2">
-				<p className="font-bold">
-					{isAlternative ? GAME_VALUES.ALTERNATIVE : GAME_VALUES.BASE}
-				</p>
+		<div className="grid grid-rows-auto-fr w-full">
+			<div className="p-4 flex items-center justify-center bg-white text-black text-center">
+				<p className="font-bold">{winner}</p>
 			</div>
-			<div className="border-2 border-white w-full aspect-square flex items-center justify-center">
-				<p className="text-6xl">{isAlternative ? roundsCircle : roundsCross}</p>
+			<div className="p-4 border-b-2 border-r-2 border-white w-full flex items-center justify-center">
+				<p className="text-2xl">
+					{areEqualStrings(winner, GAME_WINNER.CIRCLE) && roundsCircle}
+					{areEqualStrings(winner, GAME_WINNER.CROSS) && roundsCross}
+					{areEqualStrings(winner, GAME_WINNER.DRAW) && roundsDraw}
+				</p>
 			</div>
 		</div>
 	);
 };
 
 type ScoreboardItemProps = {
-	isAlternative?: boolean;
+	winner: string;
 };
 
 export default ScoreboardItem;
