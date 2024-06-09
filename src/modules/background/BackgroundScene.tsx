@@ -1,14 +1,9 @@
 import { Canvas } from '@react-three/fiber';
-import {
-	DepthOfField,
-	EffectComposer,
-	Noise,
-	Pixelation,
-} from '@react-three/postprocessing';
+
 import LoadRenderProvider from '../game/providers/load-render';
+import BGCircleObjectGroup from './components/BGCircleObjectGroup';
 import BGCrossObjectGroup from './components/BGCrossObjectGroup';
 import BackgroundLights from './components/BackgroundLights';
-import BGCircleObjectGroup from './components/BGCircleObjectGroup';
 
 const BackgroundScene = () => {
 	return (
@@ -26,17 +21,6 @@ const BackgroundScene = () => {
 					<BackgroundLights />
 					<BGCircleObjectGroup />
 					<BGCrossObjectGroup />
-
-					<EffectComposer>
-						<DepthOfField
-							focusDistance={0}
-							focalLength={0.02}
-							bokehScale={5}
-							height={480}
-						/>
-						{/* <Noise opacity={0.01} /> */}
-						<Pixelation granularity={10} />
-					</EffectComposer>
 				</LoadRenderProvider>
 			</Canvas>
 		</div>
