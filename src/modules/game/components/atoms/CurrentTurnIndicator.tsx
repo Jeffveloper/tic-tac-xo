@@ -12,13 +12,18 @@ const CurrentTurnIndicator = () => {
 	const { cross_object, circle_object } = useLoadRenderContext();
 
 	useFrame((_, delta) => {
-		crossMeshhRef.current.rotation.x -= delta / 4;
-		crossMeshhRef.current.rotation.y += delta / 4;
-		crossMeshhRef.current.rotation.z -= delta / 4;
+		const movementVariant = (Math.sin(delta) * Math.cos(delta)) / 2;
 
-		circleMeshhRef.current.rotation.x += delta / 4;
-		circleMeshhRef.current.rotation.y -= delta / 4;
-		circleMeshhRef.current.rotation.z += delta / 4;
+		if (isCurrentCross) {
+			crossMeshhRef.current.rotation.x -= movementVariant;
+			crossMeshhRef.current.rotation.y += movementVariant;
+			crossMeshhRef.current.rotation.z -= movementVariant;
+		}
+		if (!isCurrentCross) {
+			circleMeshhRef.current.rotation.x += movementVariant;
+			circleMeshhRef.current.rotation.y -= movementVariant;
+			circleMeshhRef.current.rotation.z += movementVariant;
+		}
 
 		const showCross = () => {
 			if (crossMeshhRef.current.position.x <= 0) return;

@@ -1,0 +1,188 @@
+.root::before {
+	@apply w-0.5 h-24 bg-black absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 -rotate-45 opacity-0;
+	content: '';
+	animation: showMatchIndicator 2.5s infinite;
+}
+
+.item2 span {
+	animation: showItem2 2.5s infinite;
+}
+.item3 span {
+	animation: showItem3 2.5s infinite;
+}
+.item4 span {
+	animation: showItem4 2.5s infinite;
+}
+.item5 span {
+	animation: showItem5 2.5s infinite;
+}
+.item6 span {
+	animation: showItem6 2.5s infinite;
+}
+.item7 span {
+	animation: showItem7 2.5s infinite;
+}
+.item8 span {
+	animation: showItem8 2.5s infinite;
+}
+.item9 span {
+	animation: showItem9 2.5s infinite;
+}
+
+@keyframes showItem2 {
+	0% {
+		@apply opacity-0;
+	}
+	5% {
+		@apply opacity-0;
+	}
+	10% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+
+@keyframes showItem3 {
+	0% {
+		@apply opacity-0;
+	}
+	15% {
+		@apply opacity-0;
+	}
+	20% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+
+@keyframes showItem4 {
+	0% {
+		@apply opacity-0;
+	}
+	25% {
+		@apply opacity-0;
+	}
+	30% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+
+@keyframes showItem5 {
+	0% {
+		@apply opacity-0;
+	}
+	35% {
+		@apply opacity-0;
+	}
+	40% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+
+@keyframes showItem6 {
+	0% {
+		@apply opacity-0;
+	}
+	45% {
+		@apply opacity-0;
+	}
+	50% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+@keyframes showItem7 {
+	0% {
+		@apply opacity-0;
+	}
+	55% {
+		@apply opacity-0;
+	}
+	60% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+@keyframes showItem8 {
+	0% {
+		@apply opacity-0;
+	}
+	65% {
+		@apply opacity-0;
+	}
+	70% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+@keyframes showItem9 {
+	0% {
+		@apply opacity-0;
+	}
+	75% {
+		@apply opacity-0;
+	}
+	80% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}
+@keyframes showMatchIndicator {
+	0% {
+		@apply opacity-0;
+	}
+	90% {
+		@apply opacity-0;
+	}
+	95% {
+		@apply opacity-100;
+	}
+	99% {
+		@apply opacity-100;
+	}
+	100% {
+		@apply opacity-0;
+	}
+}

@@ -27,7 +27,7 @@ const MobileSidebar = () => {
 			>
 				<div
 					onClick={() => setIsSidebarOpen(false)}
-					className="absolute top-0 left-0 w-screen h-mobile-body bg-black/70 z-10"
+					className="absolute bottom-0 left-0 w-screen h-mobile-body bg-black/70 z-10"
 				/>
 			</Transition>
 			<Transition
@@ -39,9 +39,11 @@ const MobileSidebar = () => {
 				leaveFrom="translate-x-0"
 				leaveTo="translate-x-full"
 			>
-				<div className="z-10 absolute top-0 right-0 w-[20rem] h-mobile-body p-6 bg-black flex flex-col gap-14 overflow-y-auto border-l border-">
-					<CurrentTurnTable />
-					<Scoreboard />
+				<div className="z-10 absolute bottom-0 right-0 w-[20rem] h-mobile-body p-6 bg-black flex flex-col justify-between gap-14 overflow-y-auto border-l border-">
+					<div className="flex flex-col gap-14">
+						<CurrentTurnTable />
+						<Scoreboard />
+					</div>
 					<ButtonsGroup />
 				</div>
 			</Transition>

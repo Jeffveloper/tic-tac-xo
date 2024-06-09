@@ -1,17 +1,5 @@
 @layer base {
 	body {
 		@apply text-white bg-black;
-		background-image: url('/images/background-texture-mobile.webp');
-		background-size: 34rem;
-		background-position: left;
-	}
-
-	@screen lg {
-		body {
-			@apply bg-black;
-			background-image: url('/images/background-texture.webp');
-			background-size: 50%;
-			background-position: left;
-		}
 	}
 }
