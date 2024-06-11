@@ -21,7 +21,7 @@ module.exports = {
 			},
 		},
 		fontFamily: {
-			sans: ['Space Mono', 'monospace'],
+			sans: ['var(--font-jetbrains-mono)', 'monospace'],
 		},
 		colors: {
 			white: '#F8F8F8',

@@ -1,6 +1,6 @@
 import ButtonBase from '@/atoms/buttons/ButtonBase';
 
-import { SoundIcon, SoundMuteIcon } from '@/atoms/icons/S_icon';
+import { SoundIcon, SoundMuteIcon } from '@/atoms/icons/S_icons';
 import { useState } from 'react';
 
 const SoundButton = () => {
@@ -13,14 +13,14 @@ const SoundButton = () => {
 		>
 			{isMuted && (
 				<SoundMuteIcon
-					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black z-10"
+					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black z-10 transition-colors"
 					width="20"
 					height="20"
 				/>
 			)}
 			{!isMuted && (
 				<SoundIcon
-					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black z-10"
+					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black z-10 transition-colors"
 					width="20"
 					height="20"
 				/>

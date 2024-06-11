@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import LoadRenderProvider from '../../providers/load-render';
+import LoadRenderProvider from '../../../../core/providers/load-render';
 import CurrentTurnIndicator from '../atoms/CurrentTurnIndicator';
 import { Suspense } from 'react';
 

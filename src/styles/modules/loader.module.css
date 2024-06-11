@@ -1,32 +1,32 @@
 .root::before {
 	@apply w-0.5 h-24 bg-black absolute top-1/2 -translate-x-1/2 left-1/2 -translate-y-1/2 -rotate-45 opacity-0;
 	content: '';
-	animation: showMatchIndicator 2.5s infinite;
+	animation: showMatchIndicator var(--animation-speed) infinite;
 }
 
 .item2 span {
-	animation: showItem2 2.5s infinite;
+	animation: showItem2 var(--animation-speed) infinite;
 }
 .item3 span {
-	animation: showItem3 2.5s infinite;
+	animation: showItem3 var(--animation-speed) infinite;
 }
 .item4 span {
-	animation: showItem4 2.5s infinite;
+	animation: showItem4 var(--animation-speed) infinite;
 }
 .item5 span {
-	animation: showItem5 2.5s infinite;
+	animation: showItem5 var(--animation-speed) infinite;
 }
 .item6 span {
-	animation: showItem6 2.5s infinite;
+	animation: showItem6 var(--animation-speed) infinite;
 }
 .item7 span {
-	animation: showItem7 2.5s infinite;
+	animation: showItem7 var(--animation-speed) infinite;
 }
 .item8 span {
-	animation: showItem8 2.5s infinite;
+	animation: showItem8 var(--animation-speed) infinite;
 }
 .item9 span {
-	animation: showItem9 2.5s infinite;
+	animation: showItem9 var(--animation-speed) infinite;
 }
 
 @keyframes showItem2 {

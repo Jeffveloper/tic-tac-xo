@@ -1,4 +1,4 @@
-import { BoardItemPosition } from '@/modules/game/interfaces/board';
+import { BoardItemPosition } from '@/modules/board/interfaces/board';
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
 import { useRef, useState } from 'react';

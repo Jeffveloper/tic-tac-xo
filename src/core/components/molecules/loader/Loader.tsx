@@ -1,23 +1,13 @@
-import LoaderItem from '@/atoms/LoaderItem';
+import LoaderItem from '@/atoms/loader/LoaderItem';
 import LoaderStyles from '@/styles/modules/loader.module.css';
-import { useProgress } from '@react-three/drei';
 import classNames from 'classnames';
 import { LOADER_ITEMS } from 'core/constants/loader';
-import { useEffect } from 'react';
+import { CSSProperties } from 'react';
 
-const Loader = ({ isLoading, setIsLoading }: LoaderProps) => {
-	const { progress } = useProgress();
-
-	useEffect(() => {
-		if (progress === 100) {
-			setTimeout(() => {
-				setIsLoading(false);
-			}, 300);
-		}
-	}, [progress, setIsLoading]);
-
+const Loader = ({ speed = 2.5 }: LoaderProps) => {
 	return (
 		<div
+			style={{ '--animation-speed': `${speed}s` } as CSSProperties}
 			className={classNames(
 				LoaderStyles.root,
 				'relative grid grid-cols-3 gap-1 w-fit'
@@ -31,8 +21,7 @@ const Loader = ({ isLoading, setIsLoading }: LoaderProps) => {
 };
 
 type LoaderProps = {
-	isLoading: boolean;
-	setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+	speed?: number;
 };
 
 export default Loader;

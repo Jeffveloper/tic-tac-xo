@@ -1,5 +1,5 @@
 import { GAME_STATUS } from '@/modules/game/constants/game';
-import { areEqualStrings, isEmptyString } from './string';
+import { areEqualStrings, isEmptyString } from '../../../core/helpers/string';
 
 export const calculateWinner = (squares: string[]): GAME_STATUS => {
 	const lines = [

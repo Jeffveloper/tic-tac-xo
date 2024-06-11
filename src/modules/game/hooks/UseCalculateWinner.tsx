@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
-import { DEFAULT_GAME_STATE, GAME_STATUS } from '../constants/game';
-import { calculateWinner } from 'core/helpers/game';
+import {
+	DEFAULT_GAME_STATE,
+	GAME_STATUS,
+	GAME_VALUES,
+} from '../constants/game';
 import { areEqualStrings } from 'core/helpers/string';
 import { useGameStatesContext } from '../providers/game-states';
 import { useGameHistoryContext } from '../providers/game-history';
-import { GAME_VALUES } from '../constants/board';
+import { calculateWinner } from '../helpers/winner';
 
 const UseCalculateWinner = ({
 	setIsFinished,

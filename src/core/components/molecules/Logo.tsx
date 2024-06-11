@@ -1,9 +1,12 @@
+import ButtonLink from '@/atoms/buttons/ButtonLink';
+
 const Logo = () => {
 	return (
-		<h1 className="h1">
-			Tic Tac <span className="text-primary">x</span>
-			<span className="text-secondary">o</span>
-		</h1>
+		<ButtonLink href="/">
+			<p className="h1 relative w-fit overflow-">
+				Tic Tac <span className="">xo</span>
+			</p>
+		</ButtonLink>
 	);
 };
 

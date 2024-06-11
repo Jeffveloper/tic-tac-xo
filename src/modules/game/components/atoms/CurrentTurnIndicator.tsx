@@ -3,7 +3,7 @@ import { APP_COLORS } from 'core/constants/colors';
 import { useRef } from 'react';
 import { Mesh } from 'three';
 import { useGameStatesContext } from '../../providers/game-states';
-import { useLoadRenderContext } from '../../providers/load-render';
+import { useLoadRenderContext } from '../../../../core/providers/load-render';
 
 const CurrentTurnIndicator = () => {
 	const { isCurrentCross } = useGameStatesContext();

@@ -1,7 +1,7 @@
 import { getBoardItems } from '../../helpers/board';
-import UseCalculateWinner from '../../hooks/UseCalculateWinner';
-import { useGameHistoryContext } from '../../providers/game-history';
-import { useGameStatesContext } from '../../providers/game-states';
+import UseCalculateWinner from '../../../game/hooks/UseCalculateWinner';
+import { useGameHistoryContext } from '../../../game/providers/game-history';
+import { useGameStatesContext } from '../../../game/providers/game-states';
 import BoardItem from '../atoms/BoardItem';
 
 const BoardGrid = () => {

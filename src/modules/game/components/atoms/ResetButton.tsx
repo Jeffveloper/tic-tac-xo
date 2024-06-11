@@ -1,10 +1,9 @@
 import ButtonBase from '@/atoms/buttons/ButtonBase';
 
-import { RestartIcon } from '@/atoms/icons/R_icon';
-import { GAME_VALUES } from '../../constants/board';
+import { RestartIcon } from '@/atoms/icons/R_icons';
 import { useGameHistoryContext } from '../../providers/game-history';
 import { useGameStatesContext } from '../../providers/game-states';
-import { DEFAULT_GAME_STATE } from '../../constants/game';
+import { DEFAULT_GAME_STATE, GAME_VALUES } from '../../constants/game';
 
 const ResetButton = () => {
 	const { setIsFinished, setCurrentTurn } = useGameStatesContext();
@@ -34,11 +33,11 @@ const ResetButton = () => {
 	return (
 		<ButtonBase
 			onClick={handleReset}
-			className="group self-end items-center"
+			className="group self-end items-center mt-4 w-full justify-center before:!duration-300"
 			text="Reset"
 		>
 			<RestartIcon
-				className="fill-white rotate-180 group-hover:fill-black"
+				className="fill-white rotate-180 group-hover:fill-black transition-colors"
 				width="20"
 				height="20"
 			/>

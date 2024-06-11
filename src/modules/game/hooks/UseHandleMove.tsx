@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { GAME_VALUES } from '../constants/board';
+import { GAME_VALUES } from '../constants/game';
 
 const UseHandleMove = ({
 	isFinished,

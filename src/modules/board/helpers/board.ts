@@ -1,5 +1,6 @@
-import { BOARD_ITEMS_POSITIONS, GAME_VALUES } from '../constants/board';
+import { BOARD_ITEMS_POSITIONS } from '../constants/position';
 import { BoardItemData } from '../interfaces/board';
+import { GAME_VALUES } from '@/modules/game/constants/game';
 
 export const getBoardItems = (squares: GAME_VALUES[]) => {
 	const boardItems: BoardItemData[] = BOARD_ITEMS_POSITIONS.map(

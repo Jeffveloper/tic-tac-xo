@@ -1,13 +1,13 @@
 import { areEqualStrings, isEmptyString } from 'core/helpers/string';
 import { useEffect, useState } from 'react';
-import { GAME_VALUES } from '../../constants/board';
-import UseHandleMove from '../../hooks/UseHandleMove';
-import { BoardItemData } from '../../interfaces/board';
-import { useGameHistoryContext } from '../../providers/game-history';
-import { useGameStatesContext } from '../../providers/game-states';
-import ObjectCircle from './objects/ObjectCircle';
 import ObjectCross from './objects/ObjectCross';
+import ObjectCircle from './objects/ObjectCircle';
 import ObjectToken from './objects/ObjectToken';
+import { useGameStatesContext } from '@/modules/game/providers/game-states';
+import { useGameHistoryContext } from '@/modules/game/providers/game-history';
+import UseHandleMove from '@/modules/game/hooks/UseHandleMove';
+import { GAME_VALUES } from '@/modules/game/constants/game';
+import { BoardItemData } from '../../interfaces/board';
 
 const BoardItem = ({ item, order }: BoardItemProps) => {
 	const { isFinished, currentTurn, setCurrentTurn } = useGameStatesContext();

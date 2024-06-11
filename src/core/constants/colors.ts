@@ -1,5 +1,3 @@
-import { Color } from 'three';
-
 export const APP_COLORS = {
 	WHITE: 0xf8f8f8,
 	SMOKE_WHITE: 0x8a8a8a,

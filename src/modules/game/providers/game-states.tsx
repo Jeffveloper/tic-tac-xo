@@ -6,8 +6,8 @@ import {
 	useContext,
 	useState,
 } from 'react';
-import { GAME_VALUES } from '../constants/board';
 import { areEqualStrings } from 'core/helpers/string';
+import { GAME_VALUES } from '../constants/game';
 
 const GameStatesContext = createContext({} as GameStatesContextProps);
 

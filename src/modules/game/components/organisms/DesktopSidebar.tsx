@@ -1,5 +1,5 @@
 import Logo from '@/molecules/Logo';
-import ButtonsGroup from '../molecules/ButtonsGroup';
+import SidebarButtonsGroup from '../molecules/SidebarButtonsGroup';
 import CurrentTurnTable from '../molecules/CurrentTurnTable';
 import Scoreboard from '../molecules/Scoreboard';
 
@@ -11,7 +11,7 @@ const DesktopSidebar = () => {
 				<CurrentTurnTable />
 				<Scoreboard />
 			</div>
-			<ButtonsGroup />
+			<SidebarButtonsGroup />
 		</div>
 	);
 };

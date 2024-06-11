@@ -1,6 +1,7 @@
 import TableHeadTemplate from '@/atoms/TableHeadTemplate';
 import ScoreboardItem from '../atoms/ScoreboardItem';
 import { GAME_WINNER } from 'core/constants/players';
+import ResetButton from '../atoms/ResetButton';
 
 const Scoreboard = () => {
 	return (
@@ -12,6 +13,7 @@ const Scoreboard = () => {
 				<ScoreboardItem winner={GAME_WINNER.DRAW} />
 				<ScoreboardItem winner={GAME_WINNER.CIRCLE} />
 			</div>
+			<ResetButton />
 		</section>
 	);
 };

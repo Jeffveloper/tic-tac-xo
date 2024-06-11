@@ -1,11 +1,24 @@
 import Logo from '@/molecules/Logo';
 import MobileSidebar from './MobileSidebar';
+import ButtonBase from '@/atoms/buttons/ButtonBase';
+import { useState } from 'react';
 
 const MobileHeader = () => {
+	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
 	return (
-		<div className="bg-black w-full p-4 flex justify-between items-center border-b border-white h-mobile-header">
+		<div className="flex h-mobile-header bg-black w-full p-4  justify-between items-center border-b border-white">
 			<Logo />
-			<MobileSidebar />
+			<ButtonBase
+				type="button"
+				text="LL"
+				className="rotate-180 outline-none"
+				onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+			/>
+			<MobileSidebar
+				isSidebarOpen={isSidebarOpen}
+				setIsSidebarOpen={setIsSidebarOpen}
+			/>
 		</div>
 	);
 };

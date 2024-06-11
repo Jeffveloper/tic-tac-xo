@@ -1,21 +1,16 @@
 import ButtonBase from '@/atoms/buttons/ButtonBase';
 import { Transition } from '@headlessui/react';
 import { useState } from 'react';
-import ButtonsGroup from '../molecules/ButtonsGroup';
+import SidebarButtonsGroup from '../molecules/SidebarButtonsGroup';
 import CurrentTurnTable from '../molecules/CurrentTurnTable';
 import Scoreboard from '../molecules/Scoreboard';
 
-const MobileSidebar = () => {
-	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
+const MobileSidebar = ({
+	isSidebarOpen,
+	setIsSidebarOpen,
+}: MobileSidebarProps) => {
 	return (
 		<>
-			<ButtonBase
-				type="button"
-				text="LL"
-				className="rotate-180 outline-none"
-				onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-			/>
 			<Transition
 				show={isSidebarOpen}
 				enter="transition-opacity duration-300"
@@ -44,11 +39,16 @@ const MobileSidebar = () => {
 						<CurrentTurnTable />
 						<Scoreboard />
 					</div>
-					<ButtonsGroup />
+					<SidebarButtonsGroup />
 				</div>
 			</Transition>
 		</>
 	);
+};
+
+type MobileSidebarProps = {
+	isSidebarOpen: boolean;
+	setIsSidebarOpen: (value: boolean) => void;
 };
 
 export default MobileSidebar;

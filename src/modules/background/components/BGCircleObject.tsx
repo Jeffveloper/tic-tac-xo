@@ -3,7 +3,7 @@ import { Mesh } from 'three';
 import { getRotationSpeedOwnAxis } from '../helpers/animation';
 import useCircleAnimation from '../hooks/useCircleAnimation';
 import { APP_COLORS } from 'core/constants/colors';
-import { useLoadRenderContext } from '@/modules/game/providers/load-render';
+import { useLoadRenderContext } from 'core/providers/load-render';
 
 const BGCircleObject = () => {
 	const meshRef = useRef<Mesh>(null);

@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 
-import LoadRenderProvider from '../game/providers/load-render';
+import LoadRenderProvider from '../../core/providers/load-render';
 import BGCircleObjectGroup from './components/BGCircleObjectGroup';
 import BGCrossObjectGroup from './components/BGCrossObjectGroup';
 import BackgroundLights from './components/BackgroundLights';

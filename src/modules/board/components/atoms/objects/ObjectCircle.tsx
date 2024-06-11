@@ -1,16 +1,13 @@
-import { GAME_VALUES } from '@/modules/game/constants/board';
-import { BoardItemPosition } from '@/modules/game/interfaces/board';
-import { useGameStatesContext } from '@/modules/game/providers/game-states';
-import { useLoadRenderContext } from '@/modules/game/providers/load-render';
+import { BoardItemPosition } from '@/modules/board/interfaces/board';
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
+import { useLoadRenderContext } from 'core/providers/load-render';
 import { useRef } from 'react';
 import { Mesh } from 'three';
 
 const ObjectCircle = ({ position }: ObjectCircleProps) => {
 	const { circle_object } = useLoadRenderContext();
 	const meshRef = useRef<Mesh>(null!);
-	const { currentTurn } = useGameStatesContext();
 
 	useFrame((_, delta) => {
 		const moveZ = () => {

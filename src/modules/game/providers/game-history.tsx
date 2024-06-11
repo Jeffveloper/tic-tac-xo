@@ -6,8 +6,7 @@ import {
 	useContext,
 	useState,
 } from 'react';
-import { GAME_VALUES } from '../constants/board';
-import { DEFAULT_GAME_STATE } from '../constants/game';
+import { DEFAULT_GAME_STATE, GAME_VALUES } from '../constants/game';
 
 const GameHistoryContext = createContext({} as GameHistoryContextProps);
 
