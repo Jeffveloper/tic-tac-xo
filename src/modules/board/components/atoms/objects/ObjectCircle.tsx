@@ -1,32 +1,16 @@
+import UseShowObject from '@/modules/board/hooks/UseShowObject';
 import { BoardItemPosition } from '@/modules/board/interfaces/board';
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
 import { useLoadRenderContext } from 'core/providers/load-render';
 import { useRef } from 'react';
-import { Mesh } from 'three';
+import { Mesh, Vector3 } from 'three';
 
 const ObjectCircle = ({ position }: ObjectCircleProps) => {
 	const { circle_object } = useLoadRenderContext();
 	const meshRef = useRef<Mesh>(null!);
 
-	useFrame((_, delta) => {
-		const moveZ = () => {
-			if (meshRef.current.position.z >= 0.5) return;
-
-			meshRef.current.position.z += delta;
-		};
-
-		const increaseScale = () => {
-			if (meshRef.current.scale.z >= 0.1) return;
-
-			meshRef.current.scale.x += delta;
-			meshRef.current.scale.y += delta;
-			meshRef.current.scale.z += delta;
-		};
-
-		moveZ();
-		increaseScale();
-	});
+	UseShowObject({ meshRef });
 
 	return (
 		<mesh

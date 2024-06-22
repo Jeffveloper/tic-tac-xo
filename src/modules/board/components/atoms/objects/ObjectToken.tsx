@@ -2,7 +2,7 @@ import { BoardItemPosition } from '@/modules/board/interfaces/board';
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
 import { useRef, useState } from 'react';
-import { Mesh } from 'three';
+import { Mesh, Vector3 } from 'three';
 
 const ObjectToken = ({
 	position,
@@ -13,17 +13,15 @@ const ObjectToken = ({
 
 	const [isHover, setIsHover] = useState(false);
 
-	useFrame((_, delta) => {
-		const handleHover = () => {
-			if (meshRef.current.position.z <= 0) return;
+	useFrame(() => {
+		const { x, y } = meshRef.current.position;
 
-			meshRef.current.position.z -= delta;
+		const handleHover = () => {
+			meshRef.current.position.lerp(new Vector3(x, y, 0.2), 0.3);
 		};
 
 		const handleUnhover = () => {
-			if (meshRef.current.position.z >= 0.1) return;
-
-			meshRef.current.position.z += delta;
+			meshRef.current.position.lerp(new Vector3(x, y, 0), 0.3);
 		};
 
 		if (!isAvailable) {
