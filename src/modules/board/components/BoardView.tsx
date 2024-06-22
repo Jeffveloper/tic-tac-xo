@@ -1,8 +1,12 @@
 import BoardSceneStyles from '@/styles/modules/game/board-scene.module.css';
 import classNames from 'classnames';
 import { useState } from 'react';
-import BoardScene from './organisms/BoardScene';
 import BoardLoader from './molecules/BoardLoader';
+import dynamic from 'next/dynamic';
+
+const BoardScene = dynamic(() => import('./organisms/BoardScene'), {
+	ssr: false,
+});
 
 const BoardView = () => {
 	const [isLoading, setIsLoading] = useState(true);

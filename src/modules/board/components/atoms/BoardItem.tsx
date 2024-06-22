@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react';
 import ObjectCross from './objects/ObjectCross';
 import ObjectCircle from './objects/ObjectCircle';
 import ObjectToken from './objects/ObjectToken';
-import { useGameStatesContext } from '@/modules/game/providers/game-states';
+import { useGameStatusContext } from '@/modules/game/providers/game-status';
 import { useGameHistoryContext } from '@/modules/game/providers/game-history';
 import UseHandleMove from '@/modules/game/hooks/UseHandleMove';
 import { GAME_VALUES } from '@/modules/game/constants/game';
 import { BoardItemData } from '../../interfaces/board';
 
 const BoardItem = ({ item, order }: BoardItemProps) => {
-	const { isFinished, currentTurn, setCurrentTurn } = useGameStatesContext();
+	const { isFinished, currentTurn, setCurrentTurn } = useGameStatusContext();
 	const { squares, setSquares } = useGameHistoryContext();
 
 	const { position, value } = item;

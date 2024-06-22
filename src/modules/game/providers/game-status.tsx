@@ -9,15 +9,15 @@ import {
 import { areEqualStrings } from 'core/helpers/string';
 import { GAME_VALUES } from '../constants/game';
 
-const GameStatesContext = createContext({} as GameStatesContextProps);
+const GameStatusContext = createContext({} as GameStatusContextProps);
 
-const GameStatesProvider = ({ children }: GameStatesProviderProps) => {
+const GameStatusProvider = ({ children }: GameStatusProviderProps) => {
 	const [isFinished, setIsFinished] = useState(false);
 	const [currentTurn, setCurrentTurn] = useState(GAME_VALUES.CROSS);
 	const isCurrentCross = areEqualStrings(GAME_VALUES.CROSS, currentTurn);
 
 	return (
-		<GameStatesContext.Provider
+		<GameStatusContext.Provider
 			value={{
 				isFinished,
 				setIsFinished,
@@ -27,15 +27,15 @@ const GameStatesProvider = ({ children }: GameStatesProviderProps) => {
 			}}
 		>
 			{children}
-		</GameStatesContext.Provider>
+		</GameStatusContext.Provider>
 	);
 };
 
-type GameStatesProviderProps = {
+type GameStatusProviderProps = {
 	children: ReactNode;
 };
 
-type GameStatesContextProps = {
+type GameStatusContextProps = {
 	isFinished: boolean;
 	setIsFinished: Dispatch<SetStateAction<boolean>>;
 	currentTurn: GAME_VALUES;
@@ -43,6 +43,6 @@ type GameStatesContextProps = {
 	isCurrentCross: boolean;
 };
 
-export const useGameStatesContext = () => useContext(GameStatesContext);
+export const useGameStatusContext = () => useContext(GameStatusContext);
 
-export default GameStatesProvider;
+export default GameStatusProvider;

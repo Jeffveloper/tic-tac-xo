@@ -1,12 +1,12 @@
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
 import { useRef } from 'react';
-import { Mesh } from 'three';
-import { useGameStatesContext } from '../../providers/game-states';
+import { Mesh, Vector3 } from 'three';
+import { useGameStatusContext } from '../../providers/game-status';
 import { useLoadRenderContext } from '../../../../core/providers/load-render';
 
 const CurrentTurnIndicator = () => {
-	const { isCurrentCross } = useGameStatesContext();
+	const { isCurrentCross } = useGameStatusContext();
 	const crossMeshhRef = useRef<Mesh>(null!);
 	const circleMeshhRef = useRef<Mesh>(null!);
 	const { cross_object, circle_object } = useLoadRenderContext();
@@ -25,39 +25,15 @@ const CurrentTurnIndicator = () => {
 			circleMeshhRef.current.rotation.z += movementVariant;
 		}
 
-		const showCross = () => {
-			if (crossMeshhRef.current.position.x <= 0) return;
-
-			crossMeshhRef.current.position.x -= 1;
-		};
-
-		const hideCross = () => {
-			if (crossMeshhRef.current.position.x >= 10) return;
-
-			crossMeshhRef.current.position.x += 1;
-		};
-
-		const showCircle = () => {
-			if (circleMeshhRef.current.position.x >= 0) return;
-
-			circleMeshhRef.current.position.x += 1;
-		};
-
-		const hideCircle = () => {
-			if (circleMeshhRef.current.position.x <= -10) return;
-
-			circleMeshhRef.current.position.x -= 1;
-		};
-
 		if (isCurrentCross) {
-			showCross();
-			hideCircle();
+			crossMeshhRef.current.position.lerp(new Vector3(0, 0, 0), 0.3);
+			circleMeshhRef.current.position.lerp(new Vector3(-10, 0, 0), 0.3);
 
 			return;
 		}
 
-		hideCross();
-		showCircle();
+		crossMeshhRef.current.position.lerp(new Vector3(10, 0, 0), 0.3);
+		circleMeshhRef.current.position.lerp(new Vector3(0, 0, 0), 0.3);
 	});
 
 	return (

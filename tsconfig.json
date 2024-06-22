@@ -20,6 +20,7 @@
 			"@/constants/*": ["core/components/constants/*"],
 			"@/interfaces/*": ["core/components/interfaces/*"],
 			"@/helpers/*": ["core/components/helpers/*"],
+			"@/hooks/*": ["core/hooks/*"],
 			"@/modules/*": ["modules/*"]
 		},
 		"incremental": true

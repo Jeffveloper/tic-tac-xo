@@ -1,11 +1,11 @@
 import { getBoardItems } from '../../helpers/board';
 import UseCalculateWinner from '../../../game/hooks/UseCalculateWinner';
 import { useGameHistoryContext } from '../../../game/providers/game-history';
-import { useGameStatesContext } from '../../../game/providers/game-states';
+import { useGameStatusContext } from '../../../game/providers/game-status';
 import BoardItem from '../atoms/BoardItem';
 
 const BoardGrid = () => {
-	const { setIsFinished } = useGameStatesContext();
+	const { setIsFinished } = useGameStatusContext();
 	const { squares } = useGameHistoryContext();
 
 	UseCalculateWinner({ setIsFinished, squares });

@@ -13,14 +13,14 @@ const SoundButton = () => {
 		>
 			{isMuted && (
 				<SoundMuteIcon
-					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black z-10 transition-colors"
+					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black transition-colors relative"
 					width="20"
 					height="20"
 				/>
 			)}
 			{!isMuted && (
 				<SoundIcon
-					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black z-10 transition-colors"
+					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black transition-colors relative"
 					width="20"
 					height="20"
 				/>

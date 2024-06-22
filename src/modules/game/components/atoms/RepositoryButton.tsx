@@ -8,7 +8,7 @@ const RepositoryButton = () => {
 			href="https://github.com/Jeffveloper/tic-tac-xo"
 		>
 			<GithubIcon
-				className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black z-10"
+				className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black transition-colors relative"
 				width="20"
 				height="20"
 			/>

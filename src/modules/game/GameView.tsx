@@ -1,11 +1,11 @@
+import { useMediaQuery } from '@uidotdev/usehooks';
 import { MEDIA_QUERIES } from 'core/constants/media-queries';
-import { useMedia } from 'react-use';
 import BoardView from '../board/components/BoardView';
 import DesktopSidebar from './components/organisms/DesktopSidebar';
 import MobileHeader from './components/organisms/MobileHeader';
 
 const GameView = () => {
-	const isFromLg = useMedia(MEDIA_QUERIES.MEDIA_FROM_LG, true);
+	const isFromLg = useMediaQuery(MEDIA_QUERIES.MEDIA_FROM_LG);
 
 	return (
 		<main className="relative grid grid-rows-auto-fr lg:grid-cols-fr-auto lg:grid-rows-1 overflow-hidden h-screen">

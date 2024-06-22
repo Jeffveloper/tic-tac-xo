@@ -5,7 +5,7 @@ import {
 	GAME_VALUES,
 } from '../constants/game';
 import { areEqualStrings } from 'core/helpers/string';
-import { useGameStatesContext } from '../providers/game-states';
+import { useGameStatusContext } from '../providers/game-status';
 import { useGameHistoryContext } from '../providers/game-history';
 import { calculateWinner } from '../helpers/winner';
 
@@ -13,7 +13,7 @@ const UseCalculateWinner = ({
 	setIsFinished,
 	squares,
 }: UseCalculateWinnerProps) => {
-	const { setCurrentTurn, isCurrentCross } = useGameStatesContext();
+	const { setCurrentTurn, isCurrentCross } = useGameStatusContext();
 	const {
 		setSquares,
 		setRoundsCircle,
