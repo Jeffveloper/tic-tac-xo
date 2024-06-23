@@ -24,7 +24,7 @@ const BoardLoader = ({ isLoading, setIsLoading }: BoardLoaderProps) => {
 			leaveTo="opacity-0"
 			className="absolute top-0 left-0 w-full h-full bg-black flex items-center justify-center"
 		>
-			<Loader speed={1.5} />
+			<Loader speed={1} />
 		</Transition>
 	);
 };

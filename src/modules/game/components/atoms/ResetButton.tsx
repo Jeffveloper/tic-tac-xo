@@ -18,10 +18,6 @@ const ResetButton = () => {
 	const handleReset = () => {
 		if (squares === DEFAULT_GAME_STATE) return;
 
-		console.log({ squares, DEFAULT_GAME_STATE });
-
-		console.log('Reset');
-
 		setRoundsCircle(0);
 		setRoundsCross(0);
 		setRoundsDraw(0);
@@ -36,11 +32,7 @@ const ResetButton = () => {
 			className="group self-end items-center mt-4 w-full justify-center"
 			text="Reset"
 		>
-			<RestartIcon
-				className="fill-white rotate-180 group-hover:fill-black transition-colors"
-				width="20"
-				height="20"
-			/>
+			<RestartIcon className="rotate-180" width="20" height="20" />
 		</ButtonBase>
 	);
 };

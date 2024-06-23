@@ -1,18 +1,14 @@
-import Logo from '@/molecules/Logo';
-import SidebarButtonsGroup from '../molecules/SidebarButtonsGroup';
-import CurrentTurnTable from '../molecules/CurrentTurnTable';
-import Scoreboard from '../molecules/Scoreboard';
+import UseMediaQuery from '@/modules/board/hooks/UseMediaQuery';
+import { MEDIA_QUERIES } from 'core/constants/media-queries';
+import DesktopSidebarContent from '../molecules/sidebar/DesktopSidebarContent';
 
 const DesktopSidebar = () => {
+	const isFromLg = UseMediaQuery(MEDIA_QUERIES.MEDIA_FROM_LG);
+
 	return (
-		<div className="bg-black border-l border-white w-[25rem] h-screen p-6 bg-dark-gray flex flex-col gap-12 xl:gap-20 justify-between overflow-y-auto">
-			<div className="flex flex-col gap-12 xl:gap-20">
-				<Logo />
-				<CurrentTurnTable />
-				<Scoreboard />
-			</div>
-			<SidebarButtonsGroup />
-		</div>
+		<aside className="w-0 lg:w-[25rem] h-full transition-width bg-black border-l border-white opacity-0 lg:opacity-100">
+			{isFromLg && <DesktopSidebarContent />}
+		</aside>
 	);
 };
 

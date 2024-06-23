@@ -1,31 +1,19 @@
-import ButtonBase from '@/atoms/buttons/ButtonBase';
+import ButtonAnchor from '@/atoms/buttons/ButtonAnchor';
+import { FigmaIcon } from '@/atoms/icons/F_icons';
 
-import { SoundIcon, SoundMuteIcon } from '@/atoms/icons/S_icons';
 import { useState } from 'react';
 
 const SoundButton = () => {
 	const [isMuted, setIsMuted] = useState(false);
 
 	return (
-		<ButtonBase
+		<ButtonAnchor
+			href="https://www.figma.com/design/XnxzJ3BqZhDiFvHNeg45Zz/Tic-Tac-XO?node-id=0-1&t=CbnvJ5ItBzBsmJuB-1"
 			className="group self-end items-center h-10 lg:h-11"
 			onClick={() => setIsMuted(!isMuted)}
 		>
-			{isMuted && (
-				<SoundMuteIcon
-					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black transition-colors relative"
-					width="20"
-					height="20"
-				/>
-			)}
-			{!isMuted && (
-				<SoundIcon
-					className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black transition-colors relative"
-					width="20"
-					height="20"
-				/>
-			)}
-		</ButtonBase>
+			<FigmaIcon width="20" height="20" />
+		</ButtonAnchor>
 	);
 };
 

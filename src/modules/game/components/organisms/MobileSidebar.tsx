@@ -1,9 +1,7 @@
-import ButtonBase from '@/atoms/buttons/ButtonBase';
 import { Transition } from '@headlessui/react';
-import { useState } from 'react';
-import SidebarButtonsGroup from '../molecules/SidebarButtonsGroup';
 import CurrentTurnTable from '../molecules/CurrentTurnTable';
 import Scoreboard from '../molecules/Scoreboard';
+import SidebarButtonsGroup from '../molecules/SidebarButtonsGroup';
 
 const MobileSidebar = ({
 	isSidebarOpen,

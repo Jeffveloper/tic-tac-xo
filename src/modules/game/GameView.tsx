@@ -1,19 +1,13 @@
-import { useMediaQuery } from '@uidotdev/usehooks';
-import { MEDIA_QUERIES } from 'core/constants/media-queries';
 import BoardView from '../board/components/BoardView';
 import DesktopSidebar from './components/organisms/DesktopSidebar';
 import MobileHeader from './components/organisms/MobileHeader';
 
 const GameView = () => {
-	const isFromLg = useMediaQuery(MEDIA_QUERIES.MEDIA_FROM_LG);
-
 	return (
-		<main className="relative grid grid-rows-auto-fr lg:grid-cols-fr-auto lg:grid-rows-1 overflow-hidden h-screen">
-			{!isFromLg && <MobileHeader />}
-			<section className="relative flex items-center justify-center h-mobile-body lg:h-full w-full">
-				<BoardView />
-			</section>
-			{isFromLg && <DesktopSidebar />}
+		<main className="relative lg:flex flex-col lg:flex-row overflow-hidden h-screen">
+			<MobileHeader />
+			<BoardView />
+			<DesktopSidebar />
 		</main>
 	);
 };

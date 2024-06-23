@@ -7,11 +7,7 @@ const RepositoryButton = () => {
 			className="group self-end items-center h-10 lg:h-11"
 			href="https://github.com/Jeffveloper/tic-tac-xo"
 		>
-			<GithubIcon
-				className="fill-white stroke-white group-hover:fill-black group-hover:stroke-black transition-colors relative"
-				width="20"
-				height="20"
-			/>
+			<GithubIcon width="20" height="20" />
 		</ButtonAnchor>
 	);
 };

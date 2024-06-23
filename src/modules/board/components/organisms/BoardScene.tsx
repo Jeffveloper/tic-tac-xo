@@ -1,14 +1,14 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { useMediaQuery } from '@uidotdev/usehooks';
 import { APP_COLORS } from 'core/constants/colors';
 import { MEDIA_QUERIES } from 'core/constants/media-queries';
 import { Suspense } from 'react';
 import LoadRenderProvider from '../../../../core/providers/load-render';
 import BoardGrid from './BoardGrid';
+import UseMediaQuery from '../../hooks/UseMediaQuery';
 
 const BoardScene = () => {
-	const isFromLg = useMediaQuery(MEDIA_QUERIES.MEDIA_FROM_LG);
+	const isFromLg = UseMediaQuery(MEDIA_QUERIES.MEDIA_FROM_LG);
 
 	return (
 		<Suspense fallback={null}>
