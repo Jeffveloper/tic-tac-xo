@@ -1,5 +1,4 @@
 import { BoardItemPosition } from '@/modules/board/interfaces/board';
-import { useBoardHoverContext } from '@/modules/board/providers/board-hover';
 import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
 import { useEffect, useRef, useState } from 'react';
@@ -11,14 +10,7 @@ const ObjectToken = ({
 	handleClick,
 }: ObjectTokenProps) => {
 	const meshRef = useRef<Mesh>(null!);
-	const { setIsHover: setIsBoardHover } = useBoardHoverContext();
 	const [isHover, setIsHover] = useState(false);
-
-	useEffect(() => {
-		if (!isAvailable) return;
-
-		setIsBoardHover(isHover);
-	}, [isHover, setIsBoardHover, isAvailable]);
 
 	useFrame(() => {
 		const { x, y } = meshRef.current.position;
