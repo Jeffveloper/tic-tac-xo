@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import ButtonStyles from '@/styles/modules/button.module.css';
 import { AnchorHTMLAttributes, ReactNode } from 'react';
 
 const ButtonLink = ({
@@ -11,11 +10,7 @@ const ButtonLink = ({
 	...rest
 }: ButtonLinkProps) => {
 	return (
-		<Link
-			href={href}
-			className={classNames(className, ButtonStyles.root, 'button')}
-			{...rest}
-		>
+		<Link href={href} className={classNames(className, 'button')} {...rest}>
 			{text && <span className="relative ">{text}</span>}
 			{children}
 		</Link>

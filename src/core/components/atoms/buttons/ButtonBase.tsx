@@ -1,4 +1,3 @@
-import ButtonStyles from '@/styles/modules/button.module.css';
 import classNames from 'classnames';
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
@@ -9,10 +8,7 @@ const ButtonBase = ({
 	...rest
 }: ButtonBaseProps) => {
 	return (
-		<button
-			className={classNames(className, ButtonStyles.root, 'button')}
-			{...rest}
-		>
+		<button className={classNames(className, 'button')} {...rest}>
 			{text && <span className="relative ">{text}</span>}
 			{children}
 		</button>

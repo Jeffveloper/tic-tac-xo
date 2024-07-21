@@ -2,4 +2,62 @@
 	.button {
 		@apply flex gap-2 relative bg-black border-2 border-white hover:text-black transition-all duration-300 px-2 py-1.5 lg:px-3 lg:py-2 w-fit outline-none;
 	}
+
+	.button-alternative {
+		@apply bg-white text-black  hover:text-white;
+	}
+
+	.button::before {
+		@apply absolute left-0 bottom-0 h-0 w-full bg-white transition-all;
+		content: '';
+	}
+
+	.button:active:before {
+		@apply h-full;
+	}
+
+	.button * {
+		@apply transition-none fill-white text-white stroke-white relative;
+	}
+
+	.button:active * {
+		@apply fill-black text-black;
+	}
+
+	@media (min-width: 1024px) {
+		.button:hover::before {
+			@apply h-full;
+		}
+
+		.button:hover * {
+			@apply fill-black text-black stroke-black;
+		}
+	}
+
+	.button-alternative::before {
+		@apply absolute left-0 bottom-0 h-0 w-full bg-black transition-all;
+		content: '';
+	}
+
+	.button-alternative:active:before {
+		@apply h-full;
+	}
+
+	.button-alternative * {
+		@apply transition-none fill-black text-black stroke-black relative;
+	}
+
+	.button-alternative:active * {
+		@apply fill-white text-white;
+	}
+
+	@media (min-width: 1024px) {
+		.button-alternative:hover::before {
+			@apply h-full;
+		}
+
+		.button-alternative:hover * {
+			@apply text-white fill-white stroke-white;
+		}
+	}
 }

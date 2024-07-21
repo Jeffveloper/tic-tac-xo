@@ -1,4 +1,3 @@
-import ButtonStyles from '@/styles/modules/button.module.css';
 import classNames from 'classnames';
 import { AnchorHTMLAttributes, ReactNode } from 'react';
 
@@ -14,7 +13,7 @@ const ButtonAnchor = ({
 			href={href}
 			rel="noopener noreferrer"
 			target="_blank"
-			className={classNames(className, ButtonStyles.root, 'button')}
+			className={classNames(className, 'button')}
 			{...rest}
 		>
 			{text && <span className="relative ">{text}</span>}
