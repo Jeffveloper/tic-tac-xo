@@ -1,0 +1,11 @@
+.root {
+	perspective: 3rem;
+}
+
+.icon * {
+	@apply fill-black;
+}
+
+.root:hover .icon * {
+	@apply fill-white;
+}

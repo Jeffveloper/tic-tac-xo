@@ -14,7 +14,7 @@ const UseShowObject = ({ meshRef }: UseShowObjectProps) => {
 		const { x, y } = meshRef.current.position;
 
 		const moveZ = () => {
-			meshRef.current.position.lerp(new Vector3(x, y, 0.5), 0.3);
+			meshRef.current.position.lerp(new Vector3(x, y, 0.4), 0.3);
 		};
 
 		const increaseScale = () => {

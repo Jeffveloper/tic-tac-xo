@@ -7,17 +7,22 @@ import LoadRenderProvider from '../../../../core/providers/load-render';
 import BoardGrid from './BoardGrid';
 import UseMediaQuery from '../../hooks/UseMediaQuery';
 import classNames from 'classnames';
-import BoardSceneStyles from '@/styles/modules/game/board-scene.module.css';
+import BoardSceneStyles from '@/styles/modules/board/board-scene.module.css';
+import RotationIndicator from '../atoms/RotationIndicator';
+import { Vector3 } from 'three';
 
 const BoardScene = () => {
 	const isFromLg = UseMediaQuery(MEDIA_QUERIES.MEDIA_FROM_LG);
+	const cameraPosition = isFromLg
+		? new Vector3(0, 0, 4)
+		: new Vector3(0, 0, 6.5);
 
 	return (
 		<div
 			className={classNames(BoardSceneStyles.root, 'absolute w-full h-full')}
 		>
 			<Suspense fallback={null}>
-				<Canvas camera={{ position: [0, 0, isFromLg ? 4 : 6.5] }}>
+				<Canvas camera={{ position: cameraPosition }}>
 					<LoadRenderProvider>
 						<pointLight position={[0, 0, 2]} intensity={25} distance={2.5} />
 						<hemisphereLight
@@ -27,6 +32,7 @@ const BoardScene = () => {
 						/>
 						<BoardGrid />
 						<OrbitControls
+							rotateSpeed={0.5}
 							enableZoom={false}
 							enableDamping={false}
 							enablePan={false}
@@ -34,6 +40,7 @@ const BoardScene = () => {
 					</LoadRenderProvider>
 				</Canvas>
 			</Suspense>
+			<RotationIndicator />
 		</div>
 	);
 };

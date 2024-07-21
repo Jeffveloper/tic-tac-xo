@@ -1,0 +1,55 @@
+.cube {
+	@apply w-5 h-5;
+	transform-style: preserve-3d;
+	animation: spinCube 7s linear infinite;
+}
+
+.face {
+	@apply absolute left-0 border w-full h-full;
+}
+
+.front {
+	transform: translateZ(10px);
+}
+
+.back {
+	transform: rotateY(180deg) translateZ(10px);
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(10px);
+}
+
+.left {
+	transform: rotateY(-90deg) translateZ(10px);
+}
+
+.top {
+	transform: rotateX(90deg) translateZ(10px);
+}
+
+.bottom {
+	transform: rotateX(-90deg) translateZ(10px);
+}
+
+@keyframes spinCube {
+	0%,
+	10% {
+		transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+	}
+	25%,
+	35% {
+		transform: rotateX(135deg) rotateY(45deg) rotateZ(0deg);
+	}
+	50%,
+	60% {
+		transform: rotateX(135deg) rotateY(135deg) rotateZ(45deg);
+	}
+	75%,
+	85% {
+		transform: rotateX(45deg) rotateY(135deg) rotateZ(0deg);
+	}
+	100% {
+		transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg);
+	}
+}

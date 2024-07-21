@@ -1,10 +1,9 @@
 import UseShowObject from '@/modules/board/hooks/UseShowObject';
 import { BoardItemPosition } from '@/modules/board/interfaces/board';
-import { useFrame } from '@react-three/fiber';
 import { APP_COLORS } from 'core/constants/colors';
 import { useLoadRenderContext } from 'core/providers/load-render';
 import { useRef } from 'react';
-import { Mesh, Vector3 } from 'three';
+import { Mesh } from 'three';
 
 const ObjectCross = ({ position }: ObjectCrossProps) => {
 	const { cross_object } = useLoadRenderContext();
