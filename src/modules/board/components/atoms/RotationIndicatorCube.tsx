@@ -3,7 +3,12 @@ import { ROTATION_INDICATOR_FACES } from '../../constants/rotation-indicator';
 import IndicatorCubeStyles from '@/styles/modules/board/indicator-cube.module.css';
 const RotationIndicatorCube = () => {
 	return (
-		<div className={classNames(IndicatorCubeStyles.cube, 'relative')}>
+		<div
+			className={classNames(
+				IndicatorCubeStyles.cube,
+				'relative group-hover:opacity-0'
+			)}
+		>
 			{ROTATION_INDICATOR_FACES.map((face) => {
 				return (
 					<div
