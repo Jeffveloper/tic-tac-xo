@@ -1,5 +1,6 @@
 .cube {
-	@apply w-5 h-5;
+	width: 20px;
+	height: 20px;
 	transform-style: preserve-3d;
 	animation: spinCube 7s linear infinite;
 }
