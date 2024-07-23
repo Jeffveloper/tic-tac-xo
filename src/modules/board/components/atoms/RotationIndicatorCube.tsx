@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { ROTATION_INDICATOR_FACES } from '../../constants/rotation-indicator';
 import IndicatorCubeStyles from '@/styles/modules/board/indicator-cube.module.css';
+import { ROTATION_INDICATOR_FACES } from '../../constants/rotation-indicator';
 const RotationIndicatorCube = () => {
 	return (
 		<div

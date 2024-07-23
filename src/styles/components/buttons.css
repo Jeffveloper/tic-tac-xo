@@ -12,7 +12,8 @@
 		content: '';
 	}
 
-	.button:active:before {
+	.button:active:before,
+	.button:hover:before {
 		@apply h-full;
 	}
 
@@ -20,8 +21,28 @@
 		@apply transition-none fill-white text-white stroke-white relative;
 	}
 
-	.button:active * {
+	.button:active *,
+	.button:hover * {
 		@apply fill-black text-black;
+	}
+
+	.button-alternative::before {
+		@apply absolute left-0 bottom-0 h-0 w-full bg-black transition-all;
+		content: '';
+	}
+
+	.button-alternative:active:before,
+	.button-alternative:hover:before {
+		@apply h-full;
+	}
+
+	.button-alternative * {
+		@apply transition-none fill-black text-black stroke-black relative;
+	}
+
+	.button-alternative:active *,
+	.button-alternative:hover * {
+		@apply fill-white text-white;
 	}
 
 	@media (min-width: 1024px) {
@@ -32,26 +53,7 @@
 		.button:hover * {
 			@apply fill-black text-black stroke-black;
 		}
-	}
 
-	.button-alternative::before {
-		@apply absolute left-0 bottom-0 h-0 w-full bg-black transition-all;
-		content: '';
-	}
-
-	.button-alternative:active:before {
-		@apply h-full;
-	}
-
-	.button-alternative * {
-		@apply transition-none fill-black text-black stroke-black relative;
-	}
-
-	.button-alternative:active * {
-		@apply fill-white text-white;
-	}
-
-	@media (min-width: 1024px) {
 		.button-alternative:hover::before {
 			@apply h-full;
 		}

@@ -36,7 +36,7 @@ const RotationIndicator = () => {
 							width="30"
 							className={classNames(
 								RotationIndicatorStyles.icon,
-								'absolute -bottom-1.5 -left-1 p-1 bg-black border border-white translate-y-12 group-hover:translate-y-0 transition-transform group-hover:bg-white'
+								'absolute -bottom-1.5 -left-1 p-1 bg-black border border-white translate-y-12 group-hover:translate-y-0 transition-all group-hover:bg-white'
 							)}
 						/>
 						<RotationIndicatorDescription />

@@ -1,0 +1,37 @@
+.root {
+	@apply relative;
+	width: var(--size);
+	height: var(--size);
+}
+
+.cube {
+	@apply transition-all;
+	width: calc(var(--size) - 10px);
+	height: var(--size);
+	transform-style: preserve-3d;
+	transform: rotateX(0) rotateY(0) rotateZ(0);
+}
+
+.cube.cross {
+	transition-duration: 500ms;
+}
+
+.cube.circle {
+	transition-duration: 625ms;
+}
+
+.wrapper:hover .cube {
+	transform: rotateX(180deg) rotateY(0) rotateZ(0);
+}
+
+.face {
+	--white: #f8f8f8;
+	--black: #0a0a0a;
+	--gray: #333333;
+
+	@apply absolute left-0 w-full h-full;
+	background-size: 100%;
+	background-color: var(--background-color);
+	background-repeat: no-repeat;
+	background-position: center;
+}

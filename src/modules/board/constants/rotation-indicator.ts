@@ -1,4 +1,4 @@
-export const ROTATION_INDICATOR_FACES = [
+export const ROTATION_INDICATOR_FACES: string[] = [
 	'front',
 	'back',
 	'right',

@@ -1,9 +1,9 @@
 .root {
-	background-image: url('/images/bg-texture-1-mobile.webp'),
-		url('/images/bg-texture-2-mobile.webp'),
-		url('/images/bg-texture-3-mobile.webp'),
-		url('/images/bg-texture-1-mobile.webp'),
-		url('/images/bg-texture-2-mobile.webp');
+	background-image: url('/images/background/bg-texture-1-mobile.webp'),
+		url('/images/background/bg-texture-2-mobile.webp'),
+		url('/images/background/bg-texture-3-mobile.webp'),
+		url('/images/background/bg-texture-1-mobile.webp'),
+		url('/images/background/bg-texture-2-mobile.webp');
 	background-size:
 		80vh 20vh,
 		80vh 20vh,
@@ -15,15 +15,15 @@
 		repeat no-repeat,
 		repeat no-repeat,
 		repeat no-repeat;
-	animation: bg_movement 50s infinite linear;
+	animation: bg_movement 50s linear infinite;
 }
 
 @media (min-width: 1024px) {
 	.root {
-		background-image: url('/images/bg-texture-1-desktop.webp'),
-			url('/images/bg-texture-2-desktop.webp'),
-			url('/images/bg-texture-3-desktop.webp'),
-			url('/images/bg-texture-1-desktop.webp');
+		background-image: url('/images/background/bg-texture-1-desktop.webp'),
+			url('/images/background/bg-texture-2-desktop.webp'),
+			url('/images/background/bg-texture-3-desktop.webp'),
+			url('/images/background/bg-texture-1-desktop.webp');
 		background-size:
 			100vh 25vh,
 			100vh calc(25vh + 1px),
@@ -34,7 +34,7 @@
 			repeat no-repeat,
 			repeat no-repeat,
 			repeat no-repeat;
-		animation: bg_movement 50s infinite linear;
+		animation: bg_movement 50s linear infinite;
 	}
 }
 
