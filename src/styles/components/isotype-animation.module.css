@@ -6,7 +6,7 @@
 
 .cube {
 	@apply transition-all;
-	width: calc(var(--size) - 10px);
+	width: calc(var(--size) - 16px);
 	height: var(--size);
 	transform-style: preserve-3d;
 	transform: rotateX(0) rotateY(0) rotateZ(0);
@@ -30,7 +30,7 @@
 	--gray: #333333;
 
 	@apply absolute left-0 w-full h-full;
-	background-size: 100%;
+	background-size: 80%;
 	background-color: var(--background-color);
 	background-repeat: no-repeat;
 	background-position: center;
